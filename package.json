@@ -39,7 +39,7 @@
     "debug": "^4.1.1",
     "face-api.js": "^0.20.1",
     "googleapis": "^39.2.0",
-    "jquery": "^1.12.4",
+    "jquery": "^3.5.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.4",
     "mongoose-unique-validator": "^2.0.3",
