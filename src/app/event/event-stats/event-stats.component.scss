@@ -1,0 +1,63 @@
+.chart-card {
+  margin-top: 20px;
+  width: 50%;
+  color: white;
+
+}
+
+mat-card {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.ecriture {
+  color: white;
+}
+
+
+
+.message-card {
+  margin-top: 40px;
+  max-width: 100%;
+}
+
+
+.confirmed-attendee {
+  margin-top: 40px;
+  width: 40%;
+  margin-left: 20px;
+}
+
+.inline-block {
+  width: 100%;
+  display: inline-flex;
+}
+
+
+
+.btn {
+  margin-top: 40px;
+  width: auto;
+  margin-left: 20px;
+}
+
+.invitation-card{
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 50%;
+  color: white;
+  text-align: center;
+
+}
+
+
+mat-spinner {
+  margin: auto;
+  margin-top: 50px;
+  box-sizing: 100%;
+}
+
+
+main {
+  max-width: 80%;
+  margin-left: 10%;
+}

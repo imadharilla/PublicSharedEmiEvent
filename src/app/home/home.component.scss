@@ -1,0 +1,98 @@
+
+header.masthead {
+  padding-top: 10rem;
+
+}
+header.masthead h1 {
+  font-size: 2.25rem;
+  font-family: monospace;
+}
+
+@media (min-width: 992px) {
+  header.masthead {
+    height: 100vh;
+    min-height: 40rem;
+    padding-top: 4.5rem;
+
+  }
+  header.masthead p {
+    font-size: 1.4rem;
+  }
+  header.masthead h1 {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 1200px) {
+  header.masthead h1 {
+    font-size: 3.5rem;
+  }
+}
+
+
+img {
+  max-width:100%;
+max-height:100%;
+}
+
+
+.h1-heading {
+  font-size: 2.24rem;
+  margin-bottom: 40px;
+}
+
+.p-heading {
+  font-size: 1.2rem;
+}
+
+
+
+.myButton {
+	box-shadow: 0px 0px 0px 5px #9fb4f2;
+	background:linear-gradient(to bottom, #FFFFff 100%, #ffffff 100%, 0.1);
+	border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:28px;
+	padding:14px 76px;
+	text-decoration:none;
+	text-shadow:0px 0px 0px #283966;
+}
+.myButton:hover {
+  background:linear-gradient(to bottom, #477b9e 100%, #7892c2 100%);
+  
+
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+.btn {
+  background: rgba(255,255,255,0.8);
+  border: 1px solid rgba(255,255,255,0.5);
+  border-radius: 40px;
+  color: rgba(0,0,0,0.75);
+  display: block;
+  font-size: 1em;
+  font-weight: 400;
+  height: 44px;
+  letter-spacing: 5px;
+  line-height: 42px;
+  margin: 10px auto;
+  padding: 0;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  vertical-align: middle;
+  width: 60%;
+}
+
+
+.btn:hover {
+  background: rgba(41, 142, 182, 0.1);
+  border: 1px solid rgba(58, 152, 240, 0.15);
+}

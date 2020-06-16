@@ -1,0 +1,106 @@
+<main>
+
+  <mat-card>
+<!-- List of attendees -->
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Name</th>
+    <th scope="col">Email</th>
+    <th scope="col">Occupation</th>
+    <th scope="col">EDIT</th>
+    <th scope="col">Delete</th>
+    <th scope="col">Details</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let attendee of attendeeList; index as i">
+    <td>
+      {{ attendee.nom }} {{attendee.prenom}}
+    </td>
+    <td>{{ attendee.email  }}</td>
+    <td>{{ attendee.occupation }}</td>
+    <td> <button class="btn" (click)="open(content, 'edit', attendee)"><i  > <img class="icon1" src="assets/images/Male-user-edit-icon.png" > </i></button>  </td>
+    <td> <button class="btn" (click)="openDelete(deleteContent, attendee.id)" ><i  > <img class="icon1" src="assets/images/Male-user-remove-icon.png" > </i></button>  </td>
+    <td> <button class="btn"><i  > <img class="icon1" src="assets/images/Male-user-search-icon.png"> </i></button>  </td>
+  </tr>
+  </tbody>
+</table>
+<div style="text-align: center;">
+  <button class="btn" (click)="open(content, 'create', null)"><span ><img src="assets/images/add-icon.png" style="max-height: 80px;">  </span></button>
+</div>
+
+
+<!-- Create attendee -->
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 *ngIf="!modeEdit" class="modal-title" id="modal-basic-title">Create attendee</h4>
+    <h4 *ngIf="modeEdit" class="modal-title" id="modal-basic-title">Edit attendee</h4>
+
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click'); formAttendee.reset(); modeEdit=false">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <form [formGroup]='formAttendee' (submit)='onSave()' >
+  <div class="modal-body">
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input matInput type="text" formControlName="email" name="email"  >
+        <mat-error *ngIf="formAttendee.get('email').invalid">Please enter a valid Email</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Nom</mat-label>
+        <input matInput type="text" formControlName="nom"   >
+      </mat-form-field>
+
+      <mat-form-field>
+      <mat-label>Prenom</mat-label>
+        <input matInput type="text" formControlName="prenom"   >
+      </mat-form-field>
+
+      <mat-form-field>
+      <mat-label>Occupation</mat-label>
+        <input matInput type="text" formControlName="occupation"  >
+      </mat-form-field>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-outline-dark" >Save</button>
+  </div>
+</form>
+</ng-template>
+
+
+
+
+
+
+
+
+<!-- Dialog   -->
+
+<ng-template #deleteContent let-modaldelete>
+
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-title">Profile deletion</h4>
+  <button type="button" class="close" aria-describedby="modal-title" (click)="modaldelete.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <p><strong>Are you sure you want to delete this profile?</strong></p>
+  <p>All information associated to this user profile will be permanently deleted.
+  <span class="text-danger">This operation can not be undone.</span>
+  </p>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-secondary" (click)="modaldelete.dismiss('cancel click')">Cancel</button>
+  <button type="button" class="btn btn-danger" (click)="modaldelete.close('Ok click'); onDelete()">Ok</button>
+</div>
+</ng-template>
+
+</mat-card>
+</main>

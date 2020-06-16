@@ -1,0 +1,67 @@
+
+<main>
+
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<div class="inline-block" *ngIf="!isLoading">
+<mat-card class="message-card">
+  <h3 class="ecriture"><i class="pi pi-info"></i>  Upcomming</h3>
+  <p class="ecriture">Your event didn't started yet!</p>
+</mat-card >
+<mat-card class="confirmed-attendee">
+  <h3 class="ecriture">{{confirmedAttendees}} attendees confirmed the invitation / {{numberAttendees}}</h3>
+  <p-progressBar [value]="progressBarValue"></p-progressBar>
+</mat-card>
+<div class="button">
+<button mat-button type="button" class="btn btn-success btn-lg" [routerLink] ="['/edit', event.id]"> <a target="_blank"> Edit event </a> </button>
+</div>
+<div class="button">
+  <button mat-button type="button" class="btn btn-success btn-lg" [routerLink] ="['/checkin', event.id]" style="background-color: rgba(13, 90, 92, 0.726)">Proceed Checkin</button>
+</div>
+</div>
+
+<div class="inline-block" *ngIf="!isLoading">
+<mat-card class="chart-card">
+  <h2>Attendees stats</h2>
+  <p-chart type="pie" [data]="data"></p-chart>
+</mat-card>
+
+<mat-card class="invitation-card">
+  <p-pickList filterBy="nom"  [source]="nonInvitedAttendees" [target]="toInviteAttendees" [responsive]="true" sourceHeader="Available Attendees" targetHeader="To invite list" dragdrop="true">
+    <ng-template let-car pTemplate="item">
+        <div class="ui-helper-clearfix">
+            <div style="font-size:14px;float:left;margin:15px 5px 0 0">{{car.nom}} </div>
+        </div>
+    </ng-template>
+</p-pickList>
+<button mat-button type="button" class="btn btn-success btn-lg"  (click)="confirm(content)">Send Invitations</button>
+</mat-card>
+</div>
+
+
+
+
+
+
+
+
+
+<ng-template #content let-modal>
+<div class="modal-header" >
+  <h4 class="modal-title" id="modal-title">Send Invitation</h4>
+  <button type="button" class="close" aria-describedby="modal-title" (click)="modal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <p><strong>Are you sure you want to send email invitations?</strong></p>
+  <p>All selected attendees will recieve an invitation by email.
+  <span class="text-danger">This operation can not be undone.</span>
+  </p>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('cancel click')">Cancel</button>
+  <button type="button" class="btn btn-success" (click)="modal.close('Ok click'); onSendInvitations()">Send Invitations</button>
+</div>
+
+</ng-template>
+</main>

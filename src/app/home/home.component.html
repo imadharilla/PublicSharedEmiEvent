@@ -1,0 +1,51 @@
+<!-- Masthead-->
+<header class="masthead">
+  <div class="container h-100">
+      <div class="row h-100 align-items-center justify-content-center text-center">
+          <div class="col-lg-10 align-self-end">
+              <h1 class="text-uppercase text-white font-weight-bold">Meetings & Events</h1>
+              <hr class="divider my-4" />
+          </div>
+          <div class="col-lg-8 align-self-baseline">
+              <p class="text-white-75 font-weight-light mb-5">Add our services to your conferences, exhibitions, trade-shows, and festivals and unlock the future</p>
+              <div>
+              <a *ngIf="!userIsAuthenticated" class="btn" routerLink="/login">Get started</a>
+              <a *ngIf="userIsAuthenticated" class="btn" routerLink="/events">Get started</a>
+              </div>
+          </div> 
+      </div>
+  </div>
+ 
+</header>
+
+
+<div class="h-100 d-inline-block">
+  <img src="assets/images/PatternsKiosk-1.png">
+
+</div>
+
+
+<div class="h-100 d-inline-block">
+  <h1 class="text-uppercase text-white font-weight-bold h1-heading">Facial recognition check-in </h1>
+  <p class="p-heading">Makes attendee feel impressive and has a special entrance experience.</p> <br>
+  <p class="p-heading"> Significantly cuts the queuing time by 3-5x time</p> <br>
+    <p class="p-heading">Less or no integration required</p><br>
+  <p class="p-heading"> Our service is added on top of existing registration services. </p>
+</div>
+
+
+<div class="h-100 d-inline-block" style="max-width: 40%;margin-left: 8%;">
+  <h1 class="text-uppercase text-white font-weight-bold h1-heading">On-site badge printing </h1>
+  <p class="p-heading">Instant name badge printing right after the attendee is face-checked-in for the event. Fast and smooth logistics with minimal preparation efforts.</p> <br>
+
+</div>
+<div class="h-100 d-inline-block" style="max-width: 50%;">
+  <img src="assets/images/printers.png">
+
+</div>
+
+
+
+
+
+<app-footer ></app-footer>

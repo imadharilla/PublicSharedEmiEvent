@@ -1,0 +1,27 @@
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+  color : white;
+}
+
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+
+mat-toolbar {
+
+  background:transparent;
+}
+
+img {
+  max-height: 50px;
+  max-width: 150px;
+}

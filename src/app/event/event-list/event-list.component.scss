@@ -1,0 +1,52 @@
+:host {
+  display: block;
+  margin-top: 17px;
+}
+
+
+.event-image {
+  width: 100%;
+}
+
+.event-image img {
+
+  height: 100%;
+  width: 140px;
+
+}
+
+
+mat-paginator {
+  margin-top: 16px;
+}
+
+mat-spinner{
+  margin: auto;
+}
+
+.date {
+  position: absolute;
+  background-color: lightskyblue;
+}
+
+
+mat-card  {
+  background:transparant !important;
+}
+mat-paginator {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+
+main {
+  margin-top: 20px;
+  width: 80%;
+  margin : auto;
+  background-color: transparent;
+
+
+}

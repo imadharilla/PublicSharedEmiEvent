@@ -1,0 +1,164 @@
+ 	<!-- Start Header -->
+   <header id="mu-hero" class="" role="banner">
+		<!-- Start menu  -->
+
+		<!-- End menu -->
+
+		<div class="mu-hero-overlay">
+			<div class="container">
+				<div class="mu-hero-area">
+
+					<!-- Start hero featured area -->
+					<div class="mu-hero-featured-area">
+						<!-- Start center Logo -->
+						<div class="mu-logo-area">
+							<!-- text based logo -->
+							<a class="mu-logo" href="#"><img src="assets/images/logo.png" style="width: 100%;"></a>
+							<!-- image based logo -->
+							<!-- <a class="mu-logo" href="#"><img src="assets/images/logo.jpg" alt="logo img"></a> -->
+						</div>
+						<!-- End center Logo -->
+
+						<div class="mu-hero-featured-content">
+
+							<h1>Congratulations! You're Invited</h1>
+							<h2> {{ eventTitle }}  </h2>
+							<p class="mu-event-date-line">{{eventDate}}. {{eventLocation}}</p>
+
+							<div class="mu-event-counter-area">
+								<div id="mu-event-counter">
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<!-- End hero featured area -->
+
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- End Header -->
+
+
+
+  <!-- Start main content -->
+	<main role="main">
+		<!-- Start About -->
+		<section id="mu-about">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="mu-about-area">
+							<!-- Start Feature Content -->
+							<div class="row">
+								<div class="col-md-6">
+									<div class="mu-about-left">
+										<img class="" [src]='eventImage' style="width: 100%;">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="mu-about-right">
+										<h2>About The Event</h2>
+                    <p>{{eventDescription}}</p>
+
+									</div>
+								</div>
+							</div>
+							<!-- End Feature Content -->
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+    <!-- End About -->
+
+
+<!-- Start Contact -->
+<section id="mu-contact" *ngIf="!isConfirmed">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="mu-contact-area">
+
+          <div class="mu-title-area">
+            <h2 class="mu-heading-title">Confirm Participation</h2>
+            <p>In order to confirm your participation to the event. Please fill out the form!</p>
+          </div>
+
+          <!-- Start Contact Content -->
+          <div class="mu-contact-content">
+            <div class="row">
+
+            <div class="col-md-12">
+              <div class="mu-contact-form-area">
+                    <button type="submit" class="mu-send-msg-btn" (click)="openForm(content)"><span>Fill out the Form</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Contact Content -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Contact -->
+
+</main>
+
+<!-- Start footer -->
+<footer id="mu-footer" role="contentinfo">
+  <div class="container">
+    <div class="mu-footer-area">
+      <div class="mu-footer-top">
+
+      </div>
+      <div class="mu-footer-bottom">
+        <p class="mu-copy-right">&copy; Copyright <a rel="nofollow" href="http://markups.io">emievent.io</a>. All right reserved.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+<!-- End footer -->
+
+
+
+
+
+<!-- Form Dialog   -->
+
+
+<ng-template #content let-modal>
+  <div class="modal-header" >
+    <h4 class="modal-title" id="modal-title">Please fill out the form below</h4>
+    <button type="button" class="close" aria-describedby="modal-title" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <ngb-alert type="danger" [dismissible]="false" *ngIf="!isFaceThere">The uploaded image isn't clear!</ngb-alert>
+
+    <p><strong>Please upload a photo of you to confirm your participation</strong></p>
+    <p>  <span class="text-danger">Make sure that your face appear clearly in the photo</span>    </p>
+    <form class="example-form" [formGroup]='form'  >
+      <div>
+        <button mat-strocked-button type="button" (click)="filePicker.click()">Upload Image</button>
+        <input  type="file" #filePicker (change)="onImagePicked($event)">
+      </div>
+      <div class="image-preview" *ngIf="imagePreview !=='' && imagePreview">
+        <img singleFace [src]="imagePreview"  id="imageFace" >
+      </div>
+
+      </form>
+  </div>
+  <div class="modal-footer">
+    <mat-spinner *ngIf="isLoading" ></mat-spinner>
+    <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('cancel click')"  *ngIf="!isLoading">Cancel</button>
+    <button type="button" class="btn btn-success" (click)="onSaveForm()" *ngIf="!isLoading">Confirm Participation</button>
+  </div>
+
+  </ng-template>

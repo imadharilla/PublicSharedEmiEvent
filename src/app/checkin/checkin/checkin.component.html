@@ -1,0 +1,23 @@
+
+<div class="video" >
+  <mat-spinner *ngIf="isLoading" [diameter]="200"></mat-spinner>
+   
+<div class="window" *ngIf="isFaceDetected">
+  <div class="overlay"></div>
+  <div class="box header">
+    <img [src]="attendee.imagePath" alt="" />
+    <h2>{{attendee.prenom}} {{attendee.nom}}</h2>
+    <h4>{{attendee.occupation}}</h4>
+  </div>
+  <div class="box footer">
+    <button  (click)="checkin()" class="btn">Confirm</button>
+  </div>
+</div> 
+  <div>
+  <video id="video" width="720" height="560" autoplay muted></video>
+  <a [routerLink]="'/stats/' + eventId" class="btn" style="max-width: 15%; margin: 0;">Back to event</a>
+</div>
+</div> 
+
+
+ 
