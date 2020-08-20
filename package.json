@@ -30,7 +30,7 @@
     "@angular/router": "^9.0.6",
     "@ng-bootstrap/ng-bootstrap": "^6.0.2",
     "@tensorflow/tfjs-node": "^1.7.4",
-    "bcrypt": "^4.0.1",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "bootstrap": "^4.4.1",
     "canvas": "^2.6.1",
